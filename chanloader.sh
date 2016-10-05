@@ -24,7 +24,7 @@ echo -e "${YELL}Working...${NC}"
 # URL html downloader and filter
 wget -q -O chanlines http://boards.4chan.org/$board/thread/$thread/
 # That awk erases odd lines. Duplicated data from the html.
-grep -E -o "i.4cdn.org/$board/[0-9]{13}.$format" chanlines | awk 'NR $
+grep -E -o "i.4cdn.org/$board/[0-9]{13}.$format" chanlines | awk 'NR 2 == 0'
 rm chanlines
 
 # End directory creator.
@@ -32,7 +32,7 @@ mkdir "$board"_"$thread"_"$format"
 mv chanlines_filtered "$board"_"$thread"_"$format"
 cd "$board"_"$thread"_"$format"
 
-# Loop (Travels each processed file line and directly downloads the U$
+# Loop (Travels each processed file line and directly downloads the URLs
 lines=$(cat chanlines_filtered | wc -l)
 
 for ((i=1; i<=$lines; i++))
