@@ -14,7 +14,7 @@ YELL='\033[1;33m'
 echo -n -e "${GREEN}Board (i.e., wg, b, g, etc.):${NC} "
 read board
 
-echo -n -e "${GREEN}Thread id (i.e., http://boards.4chan.org/wg/threa$
+echo -n -e "${GREEN}Thread id (i.e., http://boards.4chan.org/wg/*** This num ***/):${NC} "
 read thread
 
 echo -n -e "${GREEN}Files? (i.e., webm, png, jpg, etc.):${NC} "
